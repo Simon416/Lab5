@@ -159,6 +159,15 @@ int main()
 
 		PrintAverageVals(eprocess_type::by_rows, average_vals_in_rows, numb_rows);
 		PrintAverageVals(eprocess_type::by_cols, average_vals_in_cols, numb_cols);
+
+		for (size_t i = 0; i < numb_rows; ++i)
+		{
+			delete[]matrix[i];
+		}
+		delete[] matrix;
+		delete[] average_vals_in_rows;
+		delete[] average_vals_in_cols;
+
 	}
 	catch (std::exception& except)
 	{
